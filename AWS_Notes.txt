@@ -1,0 +1,194 @@
+                                     AWS Services
+
+
+			Different Domains in which AWS offers the services- 
+
+			1) Compute Domain
+			2) Storage Domain
+			3) Migration Domain
+			4) Security-identity Domain
+			5) Networking and content delivery domain
+			6) Messaging Domain
+			7) Database Domain
+			8) Management Domain
+
+------------------------------------------------------------------------------------------------
+Services under Compute Domain
+
+1) EC2 - Elastic Cloud Computing Service -> Resizable compute capacity machine.
+
+2) Lamda- It is like Ec2 service; You can assume it to be an advanced version of ec2; You cannot use lamda for hosting the applications 
+like EC2; It can be only used to perform some background execution like compressing the images in the application based on certain events.
+
+3) Elastic Beanstalk - This is also the advanced version of EC2 which is used for hosting the application. This service deploys your 
+application without worrying about the hardware.
+
+4) Elastic Load Balancer- This service is used to distribute your workload among the multiple EC2 instances. The traffic coming to the 
+instances is equally distributed among all the instances.  
+
+5) Autoscaling- It is used for automatic upscaling and downscaling. If you have a website with 5 EC2 instances, you can configure that 
+if your load is 70 percent, then scale it to 6th instance server. You can also set the metrics for CPU utilisation of the EC2 if the 
+traffic is less then reduce the CPU capacity.
+----------------------------------------------------------------------------------------------------
+
+Services under Storage Domain
+
+1) S3- Simple Storage System; which is object based file system. You have to create a bucket. 
+
+2) Cloud Front- It is CDN(Content delivery network). It is a caging service. If user connects to a website which is very far away from 
+their location then that website can be caged to the location which is near to their location because of which response time and latency is 
+reduced.
+
+ // Edge Location- It is a caged webserver near your place where your website is caged.
+
+3) Elastic Block Storage(EBS)- It is like a hard drive, whenever we use EC2, somewhere our OS is stored or softwares are also stored. 
+Every EC2 is backed up by default EBS volume. One EBS can be connected to one EC2 but vice versa is not applicable.
+
+4) Amazon Glacier- It is data archive service. 
+-------------------------------------------------------------------------------------------------------
+
+Snowball Service
+
+It is a data transfer service, in AWS infrastructure.
+--------------------------------------------------------------------------------------------------------
+
+Storage Gateway Service- 
+It is used between you datacenters and the cloud. Suppose you have a database server and an application server. Storage gateway sits in
+between the webserver and the data base server which keeps on taking the snapshots of database and stores it in a S3 bucket.  
+
+---------------------------------------------------------------------------------------------------------
+
+Database Domains
+
+1) RDS- It is not the Database, but it manages the Relational data. 
+
+2) Aurora- It is the database created by amazon. It is based on MySQL only.
+
+3) DynamoDB- This will manage Non-relational database.
+
+4) Elastic Cache- 
+
+5) Red Shift- It is data analytical service.
+
+---------------------------------------------------------------------------------------------------------
+Jul11thHariDBInstance      -  Database Instance Name
+vpc-0e97b2ee871a459cf
+
+Jul11thHariCustomVPC  - Custom VPC Name
+---------------------------------------------------------------------------------------------------------
+
+Network Domian Services- 
+
+1) VPC-  It is a virtual network. All resources launched in the same VPC can interact with each other.
+
+2) Direct Connect-  This is a replacement of a dedicated Internet connection. It's a leased line in the AWS infrastructure. 
+
+3) Route 53- This is a Domain name Service in the AWS infrastructure. Whenever a url is entered then that url is directed to DNS and 
+which is converted into IP Addresses. Name servers in the DNS are are provided by Route 53 service.
+---------------------------------------------------------------------------------------------------------
+
+Subnets-  Subnet is a portion of network which shares a common address component. You can also define a subnet as all the devices whose 
+IP Addresses have the same prefix. 
+
+Ex- Suppose there are 5 machines with IP addresses 100.100.100.1, 100.100.100.2 etc. All these have the same prefix and thus form the 
+subnets.
+
+
+Security Groups- It is like a virtual firewall for your instance to control your inbound and outbound traffic. This always acts at instance
+level, you cannot configure a group in the subnet level. 
+
+Route Table- Contains a set of rules and those rules are called as Route. That route will specify where the network traffic should be 
+directed. Each subnet in the VPC must be associated with a route table.
+
+ACL- Access Control List
+
+NAT- A device which forwards traffic from the instances in the private subnet to the internet or other AWS services and sends response 
+back to the instance. NAT gateway allows all the outbound traffic which is getting originated from your private instance to go to the 
+internet and get reply and also to get response from private subnet.
+
+Internet Gateway- It is VPC component that allows communication between the instances in on pc and internet. 
+-----------------------------------------------------------------------------------------------------------------------------
+
+Services under Management Domain- 
+
+1) Cloud Watch-  This service will watch all resources in AWS infrastructure.
+Ex. You can create an alarm using Cloud Watch which can trigger if CPU usage crosses 70 percent.
+
+2) Cloud Formation- This is a template service.
+
+3) Cloud Trail- This is an auditing or logging service where cloud trail can generate a log if any error occurs and store that log in S3 
+bucket.
+
+4) CLI- (Command Line Interface) This is a replacement of GUI. 
+
+5) Ops Work- This is a configuration Management service.
+---------------------------------------------------------------------------------------------------------------------------------
+
+Security Domain- 
+
+1) IAM- (Indentification Authentication Management) This service provides granula access to the user.
+
+2) KMS- (Key Management Service) This is used to create a public and private key.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1) SMS- (Simple Mail Service) This can be used to send bulk mail. 
+
+2) SQS- (Simple Queue Server) 
+
+3) SNS- (Simple Notification Service) 
+
+
+IOPS- Inout and output Operation per second
+
+PIOP- Block level Storage
+
+EBS- It is distributed, replicated block storage that is optimized for consistency and low latency read and write operations.
+
+EBS Volume- You can attach a volume to the instance.
+
+EBS Snapshot- Snapshot can be used to create multiple column.
+
+
+AWS provides 3 types of storage- 
+
+1) General Purpose(SSD) 
+
+2) PIOP-Provisional Input and Output (SSD)
+
+3) Magnetic Storage
+
+Elastic Load Balancing- 
+
+Automatically distributes the incoming application traffic accross multiple targets like EC2 instances or containers or Ip addresses.
+It can handle the varying load of your application traffic in a single availability zone or accross serveral availability zones.
+There are 3 types of Load Balancers- 
+
+1) Application Load Balancer (Works at Application Layer) Best Suitable for load balancing HHTP and HTTPS
+2) Network Load Balance (Works at Network or TCP/IP layer) Best suitable for load balancing of TCP and Transport layer security traffic. 
+3) Classic Load balancer (deprecated)
+
+
+Autoscaling is a feature that automatically adds or removes compute resources depending upon actual usage. This is also sometimes 
+reffered to as 'Automatic Elasticity'. It ensures that additional capacity is seemlessly increased during high demand and decreased when 
+the demand drops which enables consistence performace with low cost.
+
+
+DNS Name- HariSaoCustomLoadBal-2645474.sa-east-1.elb.amazonaws.com
+
+
+Amazon ElastiCache - Amazon ElastiCache is a Caching-as-a-Service from Amazon Web Services. AWS simplifies setting up, managing, and scaling a 
+distributed in-memory cache environment in the cloud. It provides a high-performance, scalable, and cost-effective caching solution. 
+AWS removes the complexity associated with deploying and managing a distributed cache environment.
+
+
+
+
+
+
+
+
+
+
+
+
