@@ -22,3 +22,5 @@ the gender etc will happen here. For deletion operation we call the service clas
 3) Decorate and use css styles
 
 4) Then put additional functionalities if time permits.
+
+https://corporate.ef.com/services/api/mobile/MobileLogin/login.aspx?t=corporate&key=98e27dac-6e4e-4add-9bb2-a4117d556f20&deviceId=7be6e08a6864ce86&ds=US1&lang=en
